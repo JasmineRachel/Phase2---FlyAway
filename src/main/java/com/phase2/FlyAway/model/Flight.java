@@ -1,10 +1,11 @@
 package com.phase2.FlyAway.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 import org.springframework.data.annotation.Id;
-
+@Entity
 public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +14,8 @@ public class Flight {
     private String source;
     private String destination;
     public String date;
-    public String price;
+    public double price;
+    public int airlineID;
     
 	public String getSource() {
 		return source;
@@ -33,10 +35,10 @@ public class Flight {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	public int getId() {

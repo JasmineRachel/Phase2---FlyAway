@@ -2,26 +2,25 @@ package com.phase2.FlyAway.model;
 
 import org.springframework.data.annotation.Id;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-
+@Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    private String userName;
     private String password;
     private String role;
     
-	public String getName() {
-		return name;
-	}
 	
-	public void setName(String name) {
-		this.name = name;
-	}
 	
+	public String getUserName() {
+		return userName;
+	}
+
 	public String getPassword() {
 		return password;
 	}
